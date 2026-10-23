@@ -3,23 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman blog</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <title>blog</title>
+    @vite('resources/css/app.css')
 </head>
 <body>
-    <nav class="navbar">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog" class="active">Blog</a>
-        <a href="/contact">Contact</a>
-        <button id="themeToggle">Mode Gelap</button>
-    </nav>
+<nav
+   class="flex py-2 px-4 md:px-4 bg-white border-b border-slate-300 dark:border-neutral-700 dark:bg-neutral-900 min-h-[50px] relative z-20"
+   aria-label="Main navigation">
+   <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 w-full">
+      <a href="#"
+         class="min-w-9 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded">
+         <span class="sr-only"></span>
+      </a>
 
-    <main class="container">
-        <h1>BLOG</h1>
+      <div id="collapseMenu" tabindex="-1"
+         class="hidden lg:block max-lg:bg-white dark:max-lg:bg-neutral-900 max-lg:border-l max-lg:border-slate-300 dark:max-lg:border-neutral-700 max-lg:w-1/2 max-lg:fixed max-lg:top-0 max-lg:right-0 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto max-sm:w-full z-50 outline-none">
 
-        <article>
-            <h3>Penelitian</h3>
+         <div
+            class="py-2 px-4 flex justify-between items-center border-b border-slate-300 sticky top-0 bg-white dark:border-neutral-700 dark:bg-neutral-900 lg:hidden max-lg:min-h-[68px]">
+            <a href="#"
+               class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded">
+               <span class="sr-only">Halaman menu</span>
+               <img src="https://readymadeui.com/logo-alt.svg" alt="readymadeui logo dialog" class="h-9 w-auto" />
+            </a>
+         </div>
+
+         <ul class="flex flex-col gap-8 font-semibold text-sm text-slate-900 dark:text-slate-50 lg:flex-row max-lg:p-6">
+            <li>
+               <a href="/"
+                  class="hover:text-blue-700 dark:hover:text-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded">home</a>
+            </li>
+            <li>
+               <a href="/about"
+                  class="hover:text-blue-700 dark:hover:text-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded">about</a>
+            </li>
+            <li>
+               <a href="/blog"
+                  class="hover:text-blue-700 dark:hover:text-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  aria-current="page">blog</a>
+            </li>
+            <li>
+               <a href="/contact"
+                  class="hover:text-blue-700 dark:hover:text-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded">contact</a>
+            </li>
+         </ul>
+      </div>
+
+      <div class="flex items-center gap-4">
+         <a href="#"
+            class="py-2 px-3.5 text-sm rounded-md font-semibold cursor-pointer transition-all focus:outline-none focus-visible:ring-2"></a>
+
+
+         <button type="button" aria-controls="collapseMenu" aria-expanded="false" aria-haspopup="true" id="toggleOpen"
+            class="cursor-pointer lg:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded">
+            <svg class="size-7 fill-slate-900 dark:fill-slate-50" aria-hidden="true" viewBox="0 0 20 20"
+               xmlns="http://www.w3.org/2000/svg">
+               <path fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"></path>
+            </svg>
+         </button>
+      </div>
+   </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-6 py-6 space-y-6">
+        <h1 class="text-3xl font-bold">BLOG</h1>
+
+        <article class="space-y-2">
+            <h2 class="text-xl font-semibold">Penelitian</h2>
             <p>
                 Penelitian ini bermaksud untuk mengetahui penggunaan gadget pada anak dan peran orang tua dalam mengawasi
                 penggunaan gadget oleh anak di Nagari Durian Gadang, Kabupaten. 50 Kota. Latar belakang dari penelitian ini
@@ -30,8 +82,8 @@
             </p>
         </article>
 
-        <article>
-            <h3>Teknik pengumpulannya</h3>
+        <article class="space-y-2">
+            <h2 class="text-xl font-semibold">Teknik pengumpulannya</h2>
             <p>
                 Penelitian ini dilakukan dengan menggunakan pendekatan kualitatif dengan
                 tipe penelitian studi kasus. Teknik pengumpulan data yang digunakan dalam penelitian ini adalah observasi, wawancara dan dokumentasi,
@@ -45,8 +97,8 @@
             </p>
         </article>
 
-        <article>
-            <h3>Peran penelitian ini</h3>
+        <article class="space-y-2">
+            <h2 class="text-xl font-semibold">Peran penelitian ini</h2>
             <p>
                 Bentuk peranan yang diterapkan oleh masing-masing orang tua anak yang aktif menggunakan gadget memiliki cara
                 yang berbeda, orang tua melakukan perannya dengan memberikan pembatasan waktu dalam penggunaan gadget, nasihat
@@ -54,6 +106,6 @@
                 orang tua terhadap gadget yang masih minim.
             </p>
         </article>
-    </main>
+</main>
 </body>
 </html>
